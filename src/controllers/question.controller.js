@@ -97,10 +97,14 @@ const createOption = asyncHandler(async (req, res) => {
     const url = `${req.protocol}://${req.get("host")}/api/v1/options/${
         option._id
     }/add_vote`;
+    // const url = `https://polling-system-r78d.onrender.com/api/v1/options/${option._id}/add_vote`;
     option.link_to_vote = url;
     await option.save();
-    existingQuestion.options.push(option._id);
-    await existingQuestion.save();
+    await existingQuestion.updateOne({
+        $push: { options: option._id },
+    });
+    // existingQuestion.options.push(option._id);
+    // await existingQuestion.save();
     return res
         .status(201)
         .json(
