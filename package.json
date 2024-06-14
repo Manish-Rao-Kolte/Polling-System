@@ -1,0 +1,21 @@
+{
+  "name": "polling_system_api",
+  "version": "1.0.0",
+  "description": "An app to create a poll and provide options to that. Also each option will have link to vote.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "Manish Rao Kolte",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
+  }
+}
