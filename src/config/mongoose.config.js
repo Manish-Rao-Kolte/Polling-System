@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const dbName = "polling-system";
-const connetDB = async () => {
+const connectDB = async () => {
     try {
         const connectionInstance = await mongoose.connect(
             `${process.env.MONGODB_URI}?dbName=${dbName}`
@@ -9,9 +9,9 @@ const connetDB = async () => {
         console.log(`Host : ${connectionInstance.connection.host}`);
         return connectionInstance;
     } catch (error) {
-        console.log("MongoDB connection failure.", error);
+        console.log("DB connection failure: ", error);
         process.exit(1);
     }
 };
 
-export default connetDB;
+export { connectDB };

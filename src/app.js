@@ -1,6 +1,4 @@
-import "dotenv/config";
 import express from "express";
-import homeRouter from "./routes/api/v1/home.routes.js";
 
 const app = express();
 
@@ -13,14 +11,12 @@ app.use(
 
 app.use(
     express.json({
-        extended: true,
+        limit: "16kb",
     })
 );
 
 app.use(express.static("public"));
 
-//Routers import and use.
-
-app.use("/", homeRouter);
+//routes import
 
 export { app };
