@@ -1,0 +1,149 @@
+{
+	"info": {
+		"name": "Polling-System-Api",
+		"hosted_server": "https://polling-system-r78d.onrender.com/api/v1"
+	},
+	"item": [
+		{
+			"name": "question",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"questionText\": \" **question** \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosted_server}}/questions/create",
+							"host": [
+								"{{hosted_server}}"
+							],
+							"path": [
+								"questions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hosted_server}}/questions/ **question id** /delete",
+							"host": [
+								"{{hosted_server}}"
+							],
+							"path": [
+								"questions",
+								" **question id** ",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hosted_server}}/questions/ **question id** ",
+							"host": [
+								"{{hosted_server}}"
+							],
+							"path": [
+								"questions",
+								" **question id** "
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "option",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"optionText\": \" **option** \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosted_server}}/questions/ **question id** /options/create",
+							"host": [
+								"{{hosted_server}}"
+							],
+							"path": [
+								"questions",
+								" **question id** ",
+								"options",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hosted_server}}/options/ **option id** /delete",
+							"host": [
+								"{{hosted_server}}"
+							],
+							"path": [
+								"options",
+								" **option id** ",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-vote",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hosted_server}}/options/ **option id** /add_vote",
+							"host": [
+								"{{hosted_server}}"
+							],
+							"path": [
+								"options",
+								" **option id** ",
+								"add_vote"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
