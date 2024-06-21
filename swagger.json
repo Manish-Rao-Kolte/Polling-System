@@ -7,7 +7,7 @@
     },
     "servers": [
         {
-            "url": "polling-system-r78d.onrender.com/api/v1"
+            "url": "https://polling-system-r78d.onrender.com/api/v1"
         }
     ],
     "paths": {
