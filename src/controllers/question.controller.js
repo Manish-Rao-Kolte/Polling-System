@@ -96,7 +96,7 @@ const createOption = asyncHandler(async (req, res) => {
     }
     const url = `${req.protocol}://${req.get("host")}/api/v1/options/${
         option._id
-    }/add_vote`;
+    }/add_vote`; //generating url dynamically.
     // const url = `https://polling-system-r78d.onrender.com/api/v1/options/${option._id}/add_vote`;
     option.link_to_vote = url;
     await option.save();

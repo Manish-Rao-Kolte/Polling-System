@@ -1,0 +1,27 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Polling System Api",
+        "description": "Gives user option to create poll and get votes on options.",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "polling-system-r78d.onrender.com/api/v1"
+        }
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "summary": "Home page.",
+                "description": "Returns home page data, currently just plain text.",
+                "responses": {
+                    "200": {
+                        "description": "Json response with plain text."
+                    }
+
+                }
+            }
+        }
+    }
+}

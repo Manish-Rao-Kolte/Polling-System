@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import swagger from "swagger-ui-express";
 
 const app = express();
 
@@ -29,9 +30,11 @@ app.use(express.static("public"));
 import homeRouter from "./routes/api/v1/home.routes.js";
 import questionRouter from "./routes/api/v1/question.routes.js";
 import optionRouter from "./routes/api/v1/option.routes.js";
+import apiDocs from "../swagger.json" assert { type: "json" };
 
 //routes use
 const baseRoute = "/api/v1";
+app.use("/api-docs", swagger.serve, swagger.setup(apiDocs));
 app.use(baseRoute, homeRouter);
 app.use(`${baseRoute}/questions/`, questionRouter);
 app.use(`${baseRoute}/options/`, optionRouter);
