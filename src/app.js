@@ -34,7 +34,7 @@ import apiDocs from "../swagger.json" assert { type: "json" };
 
 //routes use
 const baseRoute = "/api/v1";
-app.use("/api-docs", swagger.serve, swagger.setup(apiDocs));
+app.use(`${baseRoute}/api-docs/`, swagger.serve, swagger.setup(apiDocs));
 app.use(baseRoute, homeRouter);
 app.use(`${baseRoute}/questions/`, questionRouter);
 app.use(`${baseRoute}/options/`, optionRouter);
